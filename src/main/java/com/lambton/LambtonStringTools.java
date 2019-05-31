@@ -26,6 +26,14 @@ public class LambtonStringTools
                 decimal+=binaryMultiplier;
 
             }
+            else if(c=='0')
+            {
+
+            }
+            else
+            {
+                return -1;
+            }
 
             binaryMultiplier*=2;
         }
