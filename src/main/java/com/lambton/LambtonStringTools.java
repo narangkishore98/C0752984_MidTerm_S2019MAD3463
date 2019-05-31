@@ -58,20 +58,28 @@ public class LambtonStringTools
     public String replaceSubString(String string, String pattern, String replaceString)
     {
         String resultString="";
-        int startindex;
-        int endindex;
         string = string.toLowerCase();
         pattern = pattern.toLowerCase();
-        startindex = string.indexOf(pattern);
-        if(startindex==-1)
+        replaceString = replaceString.toLowerCase();
+
+
+        while(string.indexOf(pattern)!=-1)
         {
-            return string;
+            int startindex = string.indexOf(pattern);
+            int endindex = string.length() -  reverse(string).indexOf(reverse(pattern));
+            resultString += string.substring(0,startindex);
+            resultString+=replaceString;
+            resultString+=string.substring(endindex);
+
+            string = resultString;
+
         }
-        String beforeString = string.substring(0,startindex);
-        resultString += string.substring(0,startindex);
-        resultString+=replaceString;
-        resultString+= string.substring(beforeString.length()+startindex+1);
         return resultString;
     }
+    public char mostFrequent(String string)
+    {
+
+    }
+
 
 }
