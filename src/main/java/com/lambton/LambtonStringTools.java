@@ -1,11 +1,14 @@
+package com.lambton;
+
 public class LambtonStringTools
 {
     public String reverse(String string)
     {
         StringBuilder rev= new StringBuilder(); //String s = "";
-        for(char c: string.toCharArray())
+
+        for(int i=string.length()-1;i>=0;i--)
         {
-            rev.append(c); //s+=c;
+            rev.append(string.charAt(i));
         }
         return rev.toString();
     }
@@ -20,6 +23,7 @@ public class LambtonStringTools
                 decimal+=binaryMultiplier;
 
             }
+
             binaryMultiplier*=2;
         }
         return decimal;
@@ -47,7 +51,7 @@ public class LambtonStringTools
     {
         name = name.toLowerCase();
         String titleCasedName = "";
-        titleCasedName+=name.charAt(0)-32;
+        titleCasedName+=Character.toString(name.charAt(0)).toUpperCase();
         titleCasedName+=name.substring(1);
         return titleCasedName;
     }
@@ -58,7 +62,15 @@ public class LambtonStringTools
         int endindex;
         string = string.toLowerCase();
         pattern = pattern.toLowerCase();
-
+        startindex = string.indexOf(pattern);
+        if(startindex==-1)
+        {
+            return string;
+        }
+        String beforeString = string.substring(0,startindex);
+        resultString += string.substring(0,startindex);
+        resultString+=replaceString;
+        resultString+= string.substring(beforeString.length()+startindex+1);
         return resultString;
     }
 
