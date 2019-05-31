@@ -64,21 +64,27 @@ public class LambtonStringTools
         string = string.toLowerCase();
         pattern = pattern.toLowerCase();
         replaceString = replaceString.toLowerCase();
-
-
+        int startIndex,endIndex;
+        String beforeString, afterString;
         while(string.indexOf(pattern)!=-1)
         {
-            int startindex = string.indexOf(pattern);
-            int endindex = string.length() -  reverse(string).indexOf(reverse(pattern));
-            resultString += string.substring(0,startindex);
-            resultString+=replaceString;
-            resultString+=string.substring(endindex);
+            resultString = "";
+            startIndex = string.indexOf(pattern);
+            endIndex = startIndex+pattern.length();
+            beforeString = string.substring(startIndex);
+            afterString = string.substring(endIndex);
+            resultString = beforeString+replaceString+afterString;
 
-            string = resultString;
 
         }
         return resultString;
     }
+
+
+
+
+
+
     public char mostFrequent(String string)
     {
         char ch = '\0';
@@ -105,7 +111,14 @@ public class LambtonStringTools
                 max=i;
             }
         }
-        System.out.println(max);
+        if(max==1)
+        {
+            ch = string.charAt(string.length()-1);
+        }
+        else
+        {
+            ch = (string.charAt(max));
+        }
         return ch;
     }
 
