@@ -1,5 +1,8 @@
 package com.lambton;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LambtonStringTools
 {
     public String reverse(String string)
@@ -78,7 +81,32 @@ public class LambtonStringTools
     }
     public char mostFrequent(String string)
     {
+        char ch = '\0';
+        Map<Character, Integer> map;
+        map = new HashMap<Character, Integer>();
 
+        for(char c:string.toCharArray())
+        {
+            if(map.get(c)==null)
+            {
+                map.put(c,1);
+            }
+            else
+            {
+                map.put(c, map.get(c)+1);
+            }
+
+        }
+        int max = -1;
+        for(int i=0;i<string.length();i++)
+        {
+            if(map.get(string.charAt(i))>max)
+            {
+                max=i;
+            }
+        }
+        System.out.println(max);
+        return ch;
     }
 
 
