@@ -41,6 +41,7 @@ public class LambtonStringTools
     }
     public String initials(String fullName)
     {
+        fullName=fullName.toUpperCase();
         String names[] = fullName.split(" ");
         if(names.length == 2)
         {
@@ -79,13 +80,13 @@ public class LambtonStringTools
             resultString = "";
             startIndex = string.indexOf(pattern);
             endIndex = startIndex+pattern.length();
-            beforeString = string.substring(startIndex);
+            beforeString = string.substring(0,startIndex);
             afterString = string.substring(endIndex);
-            resultString = beforeString+replaceString+afterString;
+            string = beforeString + replaceString+afterString;
 
 
         }
-        return resultString;
+        return string;
     }
 
 

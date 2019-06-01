@@ -14,11 +14,13 @@ public class C0752984_MidTerm_S2019MAD3463 {
         System.out.println("Mobile Applications: "+object.reverse("Mobile Applications "));
         System.out.println("-------------Testing initals------------");
         System.out.println("Kishore Narang: "+object.initials("Kishore Narang"));
-        System.out.println("Kishore Sushil Narang: "+object.initials("Kishore Sushil Narang"));
+        System.out.println("kishore sushil Narang: "+object.initials("Kishore Sushil Narang"));
         System.out.println("-----------Testing mostFrequent----------------");
         System.out.println("Ram: "+object.mostFrequent("Ram"));
         System.out.println("Kishore Kumar Narang: "+object.mostFrequent("Kishore Kumar Narang"));
-        System.out.println(object.replaceSubString("the dog jumped the fe" +
-                "nce","the","that"));
+        System.out.println("------------Testing replaceSubString----------");
+        System.out.println("the dog jumped the fence: "+object.replaceSubString("the dog jumped the fence","the","that"));
+        System.out.println("Many Many congratulations of the day.: "+object.replaceSubString("Many Many congratulations of the day","many","very"));
+
     }
 }
